@@ -1,0 +1,18 @@
+{
+  "name": "lbi-todo",
+  "version": "1.0.0",
+  "description": "DigitasLBI Front-end assignment",
+  "author": "Jeroen Wever",
+  "devDependencies": {
+    "browser-sync": "^2.11.0",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-uglify": "^1.5.1",
+    "path": "^0.12.7"
+  }
+}
