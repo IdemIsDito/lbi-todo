@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<title>DigitasLBi Todo</title>
-		<!-- inject:css -->
-		<!-- endinject -->
-		<!-- CDN provided scripts -->
-		<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
-	</head>
-	<body>
-		<!-- inject:js -->
-		<!-- endinject -->
-	</body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>DigitasLBi Todo</title>
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- CDN provided scripts -->
+    <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="./img/digitas-lbi-logo.png" alt="DigitasLBi">
+        <div class="add-todo">
+          <input id="new-todo" type="text" placeholder="add a new todo...">
+          <button id="add-todo" class="btn pull-right">add</button>
+        </div>
+      </div>
+    </header>
+    <main>
+        <div class="toolbar">
+          <div class="container">
+            <button id="complete-all" class="btn pull-left">Complete all</button>
+            <button id="clear-completed" class="btn pull-right">Clear completed</button>
+            <div id="counter">
+            </div>
+          </div>
+        </div>
+        <ul id="todo-list">
+
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <img src="./img/digitas-lbi-logotype.jpg" alt="DigitasLBi">
+    </footer>
+    <script id="todo-template" type="text/x-handlebars-template">
+      {{#this}}
+      <li {{#if completed}}class="completed"{{/if}} data-id="{{id}}">
+        <div class="container">
+          <input class="toggle" type="checkbox" {{#if completed}}checked{{/if}}>
+          <label><span></span>{{title}}</label>
+          <span class="delete"></span>
+        </div>
+      </li>
+      {{/this}}
+    </script>
+    <script id="counter-template" type="text/x-handlebars-template">
+      {{#this}}
+        {{#if empty }}
+          <span>You have no todos left, Wohoowww!</span>
+        {{else}}
+          <span>{{activeTodoCount}} todo {{itemsWord}} left (out of {{todoCount}})</span>
+        {{/if}}
+      {{/this}}
+    </script>
+    <!-- inject:js -->
+    <!-- endinject -->
+  </body>
 </html>

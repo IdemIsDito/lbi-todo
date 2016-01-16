@@ -35,7 +35,8 @@ gulp.task('inject', ['index'], function() {
   var sources = gulp.src(['./public/**/*.js', './public/**/*.css'], {read: false});
   return gulp.src('./public/index.html')
     .pipe(inject(sources, {relative: true}))
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./public/'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('static-files',function(){
@@ -68,6 +69,6 @@ gulp.task('serve', ['build'], function() {
   });
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.index).on('change', browserSync.reload);
+  gulp.watch(paths.index, ['inject']);
 });
 gulp.task('build', ['static-files', 'styles', 'scripts', 'inject']);
