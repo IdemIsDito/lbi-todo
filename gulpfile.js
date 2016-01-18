@@ -35,7 +35,7 @@ gulp.task('index', function () {
     .pipe(gulp.dest('./public/'));
 });
 
-gulp.task('inject', ['clean', 'static-files', 'index', 'styles', 'scripts'], function() {
+gulp.task('inject', ['static-files', 'index', 'styles', 'scripts'], function() {
   var sources = gulp.src(['./public/**/*.js', './public/**/*.css'], {read: false});
   return gulp.src('./public/index.html')
     .pipe(inject(sources, {relative: true}))
