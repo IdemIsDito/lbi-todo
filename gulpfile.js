@@ -35,7 +35,7 @@ gulp.task('index', function () {
     .pipe(gulp.dest('./public/'));
 });
 
-gulp.task('inject', ['index', 'styles', 'scripts'], function() {
+gulp.task('inject', ['clean', 'static-files', 'index', 'styles', 'scripts'], function() {
   var sources = gulp.src(['./public/**/*.js', './public/**/*.css'], {read: false});
   return gulp.src('./public/index.html')
     .pipe(inject(sources, {relative: true}))
@@ -72,7 +72,7 @@ gulp.task('scripts', function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', ['static-files', 'styles', 'scripts', 'inject']);
+gulp.task('build', ['inject']);
 
 gulp.task('watch', ['build'], function() {
   browserSync.init({
