@@ -85,12 +85,17 @@ header {
     input[type="text"] {
       width: 100%;
       border: none;
+      outline: none;
       background-color: transparent;
       text-align: center;
       font-size: 1.5em;
       color: #fff;
       .center-block();
 
+      &:focus {
+        border-bottom: 1px solid #fff;
+      }
+      
       &::-webkit-input-placeholder {
         color: #fff;
       }
@@ -149,8 +154,6 @@ main {
     padding-right: @gutter;
     padding-bottom: @gutter/2;
     padding-left: @gutter;
-    margin-left: -@gutter;
-    margin-right: -@gutter;
 
     &.completed {
       background-color: @lbi-medium-grey;
