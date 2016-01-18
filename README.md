@@ -31,6 +31,7 @@
 1. Gulpfile
   - Wrote this one from scratch for the first time, so I think it can be improved.
   - Execute clean task before building. It sometimes errors when it is part of the build task.
+  - Fix issue when reloading index.html after change, sometimes it does not load styles.
 2. Use bower instead of CDN loaded libraries.
 3. Don't use browsersync for production
 4. Separate styles.less into multiple files.

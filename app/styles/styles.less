@@ -78,7 +78,7 @@ header {
   img {
     .center-block();
   }
-  .add-todo {
+  .todo-header {
     margin-top: @gutter;
     text-align: center;
 
@@ -90,7 +90,7 @@ header {
       font-size: 1.5em;
       color: #fff;
       .center-block();
-      
+
       &::-webkit-input-placeholder {
         color: #fff;
       }
@@ -113,7 +113,7 @@ header {
 
 main {
 
-  .toolbar {
+  .todo-toolbar {
     margin-top: @gutter/2;
     margin-bottom: @gutter/2;
     text-align: center;
@@ -137,53 +137,53 @@ main {
     }
   }
 
-  ul {
+  .todo-list {
     padding: 0;
-  }
 
-  li {
-    list-style-type: none;
-    background-color: @lbi-grey;
-    border-bottom: 2px solid #fff;
-    padding-top: @gutter/2;
-    padding-right: @gutter;
-    padding-bottom: @gutter/2;
-    padding-left: @gutter;
+    .todo-list-item {
+      list-style-type: none;
+      background-color: @lbi-grey;
+      border-bottom: 2px solid #fff;
+      padding-top: @gutter/2;
+      padding-right: @gutter;
+      padding-bottom: @gutter/2;
+      padding-left: @gutter;
 
-    &.completed {
-      background-color: @lbi-medium-grey;
-      text-decoration:line-through;
-    }
+      &.completed {
+        background-color: @lbi-medium-grey;
+        text-decoration:line-through;
+      }
 
-    input[type="checkbox"] {
-      opacity: 0;
-      width:16px;
-      height:16px;
-      cursor:pointer;
-    }
+      input[type="checkbox"] {
+        opacity: 0;
+        width:16px;
+        height:16px;
+        cursor:pointer;
+      }
 
-    input[type="checkbox"] + label span {
-      display:inline-block;
-      width:16px;
-      height:16px;
-      margin-left: -16px;
-      margin-right: @gutter;
-      vertical-align:middle;
-      background-image: url('../img/sprite.png');
-    }
+      input[type="checkbox"] + label span {
+        display:inline-block;
+        width:16px;
+        height:16px;
+        margin-left: -16px;
+        margin-right: @gutter;
+        vertical-align:middle;
+        background-image: url('../img/sprite.png');
+      }
 
-    input[type="checkbox"]:checked + label span {
-      background-position: 32px 0;
-    }
+      input[type="checkbox"]:checked + label span {
+        background-position: 32px 0;
+      }
 
-    .delete {
-      display: block;
-      height: 17px;
-      width: 16px;
-      background-image: url('../img/sprite.png');
-      background-position: 16px 0;
-      cursor: pointer;
-      .pull-right();
+      .delete {
+        display: block;
+        height: 17px;
+        width: 16px;
+        background-image: url('../img/sprite.png');
+        background-position: 16px 0;
+        cursor: pointer;
+        .pull-right();
+      }
     }
   }
 }
