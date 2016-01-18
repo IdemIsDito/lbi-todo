@@ -1,8 +1,8 @@
 var gulp = require('gulp'),
+    del = require('del'),
     util = require('gulp-util'),
     path = require('path'),
     less = require('gulp-less'),
-    clean = require('gulp-clean'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     cssnano = require('gulp-cssnano'),
@@ -26,13 +26,12 @@ var config = {
     production: !!util.env.production
   };
 gulp.task('clean', function(){
-  return gulp.src(config.paths.public, {read: false})
-    .pipe(clean());
+  del(config.paths.public);
 });
 
 gulp.task('index', function () {
   return gulp.src('./app/index.html')
-    .pipe(minifyHtml({collapseWhitespace: true}))
+    .pipe(config.production ? minifyHtml({collapseWhitespace: true}) : util.noop())
     .pipe(gulp.dest('./public/'));
 });
 

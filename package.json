@@ -5,9 +5,9 @@
   "author": "Jeroen Wever",
   "devDependencies": {
     "browser-sync": "^2.11.1",
+    "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.0",
     "gulp-htmlmin": "^1.3.0",
