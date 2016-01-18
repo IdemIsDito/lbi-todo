@@ -26,7 +26,7 @@ var config = {
     production: !!util.env.production
   };
 gulp.task('clean', function(){
-  del(config.paths.public);
+  return del(config.paths.public);
 });
 
 gulp.task('index', function () {
@@ -35,7 +35,7 @@ gulp.task('index', function () {
     .pipe(gulp.dest('./public/'));
 });
 
-gulp.task('inject', ['index'], function() {
+gulp.task('inject', ['index', 'styles', 'scripts'], function() {
   var sources = gulp.src(['./public/**/*.js', './public/**/*.css'], {read: false});
   return gulp.src('./public/index.html')
     .pipe(inject(sources, {relative: true}))
